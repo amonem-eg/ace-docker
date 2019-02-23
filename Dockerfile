@@ -19,6 +19,7 @@ FROM ubuntu:16.04 as aceinstall
 ARG ACE_INSTALL=11.0.0.3-ACE-LINUX64-DEVELOP.tar.gz
 WORKDIR /opt/ibm
 RUN pwd
+RUN cd /
 COPY deps/$ACE_INSTALL .
 RUN mkdir ace-11
 RUN tar xzf $ACE_INSTALL --exclude ace-11.\*/tools --strip-components 1 --directory /opt/ibm/ace-11
